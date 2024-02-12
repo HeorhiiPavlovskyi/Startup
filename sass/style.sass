@@ -49,13 +49,14 @@ body
 .top 
 	min-height: 80vh
 	background-image: url(../img/bg-top.png)
-	background-position: left center
+	background-position: center center
 	background-repeat: no-repeat
 	background-size: cover
 	color: #fff
 	@media (max-width: 575.98px)
 		min-height: 100vh
-
+	@media (min-width: 1140px)
+		background-size: 105%
 	.logo 
 		font-family: 'Montserrat', sans-serif
 		font-size: 24px
@@ -73,6 +74,8 @@ body
 	background: transparent
 	border: 0
 	padding: 0
+	@media (min-width: 992px)
+		display: none
 	&:before 
 		content: ""
 		width: 20px
@@ -86,30 +89,30 @@ body
 		width: 14px
 		margin-top: 4px
 		animation-name: sandwich-2
-	&:before, span, &:after 
-		display: block
-		transition: $transition 
-		border-top: 2px solid transparent
-		animation-iteration-count: infinite
-		animation-timing-function: linear
-		animation-duration: 3s
-		// animation-delay: 1.5s
-		margin-left: auto
-	&.active
-		&:before 
-			transform: rotate(45deg) translateX(3px) translateY(22px)
-			width: 18px
-			animation-name: none !important
-			border-top: 2px solid #fff
-		&:after 
-			transform: rotate(-45deg) translateX(3px) translateY(-22px)
-			width: 18px
-			animation-name: none !important
-			border-top: 2px solid #fff
-		span 	
-			width: 0
-			opacity: 0
-			animation-name: none !important
+		&:before, span, &:after 
+			display: block
+			transition: $transition 
+			border-top: 2px solid transparent
+			animation-iteration-count: infinite
+			animation-timing-function: linear
+			animation-duration: 3s
+			// animation-delay: 1.5s
+			margin-left: auto
+			&.active
+				&:before 
+					transform: rotate(45deg) translateX(3px) translateY(22px)
+					width: 18px
+					animation-name: none !important
+					border-top: 2px solid #fff
+				&:after 
+					transform: rotate(-45deg) translateX(3px) translateY(-22px)
+					width: 18px
+					animation-name: none !important
+					border-top: 2px solid #fff
+				span 	
+					width: 0
+					opacity: 0
+					animation-name: none !important
 
 .header__links
 	margin-left: auto
@@ -131,7 +134,7 @@ body
 .start__field
 	text-align: center
 	margin-top: 150px
-	
+
 	.blockquote__inner
 		margin-top: 250px
 		.welcome, .welcome__text
@@ -296,6 +299,7 @@ body
 		background-size: cover
 		background-repeat: no-repeat
 		background-position: center center
+		transition: $transition
 		&.work__img-left
 			background-position: center left !important
 		&.work__img-right
@@ -303,6 +307,14 @@ body
 		@media (max-width: 360px)
 			width: 180px
 			height: 160px
+		&:before 
+			content: ""
+			background: transparent
+			transition: $transition
+		&:hover
+			&:before 
+				content: ""
+				background: rgba(192, 48, 28, .5)
 	.project__inner
 		background-image: url(../img/project-bg.png)
 		background-size: cover
